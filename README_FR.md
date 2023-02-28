@@ -1,40 +1,29 @@
-# SQUELETTE - Module modèle 
+#  Module Sanssaint 60'
 
 [English](README.md) | [Français](README_FR.md)
 
 ### Déscription
 
-*Déscription du module*
+*Modifie l'évènement de la Sanssaint pour niveau 60.*
 
 ### Mise en place du module:
 
 ###### Récupérer le projet
 
-Clonez le projet dans le dossier module sous le nom `${MODULE_NAME}`.
+Clonez le projet dans le dossier module sous le nom `mod_event_hallow_s_end_60`.
 
-###### Modification de l'acquisition des points de talent
+###### Modification de la Base de Données
 
-À partir de maintenant nous considérons que vous vous trouvez à la racine de votre serveur.
-Appliquer le patch git en utilisant la commande suivante:\
-`git apply --ignore-space-change --ignore-whitespace modules/${MODULE_NAME}/.patch`
-
-Ou modifiez directement `src/` via votre éditeur favori\
-et appliquez les modifications trouvées dans `modules/${MODULE_NAME}/.patch`.
-
-###### Modifcation de la Base de Données
-
-Appliquez les requêtes dans les fichiers sql sous le dossier `modules/${MODULE_NAME}/sql/`\
+Appliquez les requêtes dans les fichiers sql sous le dossier `modules/mod_event_hallow_s_end_60/sql/`\
 sur la table respectif (world => acore\_world / auth => acore\_auth / char => acore\_char)
 
 Voici une commande que j'utilise souvent pour appliquer directement plusieurs fichiers sql:\
-`for sql in $(find modules/${MODULE_NAME}/sql/*world*/ -type f -name '*.sql'); do mysql -uUSERDB -hHOSTDB -Dacore_world -p < ${sql}; done`
+`for sql in $(find modules/mod_*/sql/*world*/ -type f -name '*.sql'); do mysql -uUSERDB -hHOSTDB -Dacore_world -p < ${sql}; done`
 
 ###### Ajout des données DBC
 
-Copiez les sous dossier des DBC depuis `modules/${MODULE_NAME}/data/`\
-Et placez les dans votre dossier data (comme indiqué dans worldserver.conf).
-
-Ajoutez les égalements dans le dossier data du client.
+Importez les fichiers CSV depuis `modules/mod_event_hallow_s_end_60/data/`\
+Afin de modifier vos DBC locaux dans votre dossier data (comme indiqué dans worldserver.conf).
 
 ###### Recompilez et voilà.
 
@@ -49,4 +38,3 @@ Licence MIT
 
 Notre serveur [MurlocVillage](https://wotlk.murlocvillage.com/fr/)\
 &emsp;&emsp;&ensp;&nbsp;Merci à [AzerothCore](http://azerothcore.org/)
-
